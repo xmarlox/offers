@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>/offers</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="author" content="MarLo MoraLes" />
+    <meta
+      name="Offers"
+      content="offers list,offers listing,offer,offers,/offers"
+    />
+    <meta name="msapplication-TileColor" content="#1b1d20" />
+    <meta name="theme-color" content="#1b1d20" />
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Inter Font: https://rsms.me/inter/ -->
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="bg-white dark:bg-black">
+    <div class="2xl:max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-4">
+        <%= render "layouts/shared/sidebar" %>
+        <main role="main" class="w-full col-span-1 lg:col-span-3">
+          <section class="p-8 lg:p-4 mt-4">
+            <%= yield %>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

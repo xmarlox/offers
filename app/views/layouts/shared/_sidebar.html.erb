@@ -1,0 +1,37 @@
+<% user = Current.user %>
+<aside class="w-full">
+  <div
+    class="sticky top-0 rounded-xl w-full px-8 sm:px-16 py-8 lg:py-12 lg:px-10">
+    <% if user.present? %>
+      <h1
+        class="text-black dark:text-white text-xl md:text-2xl xl:text-3xl 2xl:text-5xl font-bold tracking-tighter">
+        <%= link_to "/offers", root_path, class: "text-black dark:text-white" %>
+      </h1>
+      <div class="lg:mt-8 max-w-xl">
+        <p class="dark:text-zinc-400 text-zinc-500 text-base">
+          Signed as <span class="underline"><%= user.username %></span>
+        </p>
+      </div>
+      <div class="mt-4 pt-6 border-t border-zinc-800">
+        <nav>
+          <ul
+            class="lg:space-y-3 space-x-3 list-none no-underline mt-6 lg:mt-12 inline-flex items-center sm:flex sm:flex-col sm:items-start sm:space-x-0"
+            role="list">
+            <li>
+              <%= link_to "Change password", edit_password_path, class: "group inline-flex items-center justify-center rounded-lg py-2 px-4 text-xs lg:text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-900 text-white hover:bg-zinc-700 hover:text-zinc-100 active:bg-zinc-800 active:text-zinc-300 focus-visible:outline-zinc-900 dark:bg-white dark:text-black" %>
+            </li>
+            <li>
+              <%= link_to "Devices & Sessions", sessions_path, class: "group inline-flex items-center justify-center rounded-lg py-2 px-4 text-xs lg:text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-900 text-white hover:bg-zinc-700 hover:text-zinc-100 active:bg-zinc-800 active:text-zinc-300 focus-visible:outline-zinc-900 dark:bg-white dark:text-black" %>
+            </li>
+            <li>
+              <%= link_to "Activity Log", authentications_events_path, class: "group inline-flex items-center justify-center rounded-lg py-2 px-4 text-xs lg:text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-900 text-white hover:bg-zinc-700 hover:text-zinc-100 active:bg-zinc-800 active:text-zinc-300 focus-visible:outline-zinc-900 dark:bg-white dark:text-black" %>
+            </li>
+            <li>
+              <%= button_to "Sign out", Current.session, method: :delete, class: "group inline-flex items-center justify-center rounded-lg py-2 px-4 text-xs lg:text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-900 text-white hover:bg-zinc-700 hover:text-zinc-100 active:bg-zinc-800 active:text-zinc-300 focus-visible:outline-zinc-900 dark:bg-white dark:text-black" %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    <% end %>
+  </div>
+</aside>

@@ -1,0 +1,73 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+grpmale:
+  slug: grpmale
+  name: Male
+  target_table: users
+  target_column: gender
+  target_value: male
+  target_operator: equals
+
+grpfemale:
+  slug: grpfemale
+  name: Female
+  target_table: users
+  target_column: gender
+  target_value: female
+  target_operator: equals
+
+grpothers:
+  slug: grpothers
+  name: Others
+  target_table: users
+  target_column: gender
+  target_value: others
+  target_operator: equals
+
+grpinfants:
+  slug: grpinfants
+  name: Infants
+  target_table: users
+  target_column: age
+  target_value: 0..2
+  target_operator: range
+
+grpkids:
+  slug: grpkids
+  name: Kids
+  target_table: users
+  target_column: age
+  target_value: 3..12
+  target_operator: range
+
+grpteens:
+  slug: grpteens
+  name: Teens
+  target_table: users
+  target_column: age
+  target_value: 13..20
+  target_operator: range
+
+grpyoungs:
+  slug: grpyoungs
+  name: Young Adults
+  target_table: users
+  target_column: age
+  target_value: 21..39
+  target_operator: range
+
+grpadults:
+  slug: grpadults
+  name: Adults
+  target_table: users
+  target_column: age
+  target_value: 40..69
+  target_operator: range
+
+grpolds:
+  slug: grpolds
+  name: Old Adults
+  target_table: users
+  target_column: age
+  target_value: 70..200
+  target_operator: range

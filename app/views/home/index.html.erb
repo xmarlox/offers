@@ -1,0 +1,13 @@
+<% if @offers.any? %>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-6 gap-y-8 p-4">
+    <%= render partial: "thumbnail", collection: @offers, as: :offer %>
+  </div>
+<% else %>
+  <div class="ml-6">
+    <h1
+      class="text-black dark:text-white text-xl md:text-2xl lg:text-4xl xl:text-6xl font-bold tracking-tighter"
+    >
+      No offers found!
+    </h1>
+  </div>
+<% end %>

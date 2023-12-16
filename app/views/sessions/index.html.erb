@@ -1,0 +1,27 @@
+<h1 class="font-bold underline text-black dark:text-white">Devices & Sessions</h1>
+
+<div id="sessions" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-3 gap-y-8">
+  <% @sessions.each do |session| %>
+    <div id="<%= dom_id session %>">
+      <div class="inline-flex justify-between w-full">
+        <div>
+          <h4
+            class="text-base font-semibold text-black dark:text-white mt-4 relative"
+          >
+            User Agent: <%= session.user_agent %>
+          </h4>
+          <p
+            class="relative z-10 mt-2 text-sm text-zinc-500 dark:text-zinc-400"
+          >
+            IP Address: <%= session.ip_address %>
+          </p>
+          <p
+            class="relative z-10 mt-2 text-sm text-zinc-500 dark:text-zinc-400"
+          >
+            Created date: <%= session.created_at %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

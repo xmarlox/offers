@@ -1,0 +1,27 @@
+<h1 class="font-bold underline text-black dark:text-white mb-4">Sign In</h1>
+
+<%= form_with(url: sign_in_path, model: User, class: "flex flex-col w-full lg:w-1/2 h-full space-y-2") do |form| %>
+  <% if @user.errors.any? %>
+    <div class="flex w-full h-fit bg-red dark:bg-lightred rounded-lg">
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li class="text-black dark:text-white"><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="flex w-full">
+    <%= form.text_field :username, value: @user.username, required: true, autofocus: true, placeholder: "Username", class: "w-full p-1 rounded-lg" %>
+  </div>
+
+  <div class="flex w-full">
+    <%= form.password_field :password, required: true, minlength: User::PASSWORD_MIN_LENGTH, placeholder: "Password", class: "w-full p-1 rounded-lg" %>
+  </div>
+
+  <div class="flex w-full space-x-2 pt-4">
+    <%= form.submit "Sign in", class: "group inline-flex items-center justify-center rounded-lg py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-900 text-white hover:bg-zinc-700 hover:text-zinc-100 active:bg-zinc-800 active:text-zinc-300 focus-visible:outline-zinc-900 dark:bg-white dark:text-black cursor-pointer" %>
+
+    <%= link_to "Sign up", sign_up_path, class: "group inline-flex items-center justify-center rounded-lg py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-700 text-white hover:bg-zinc-900 hover:text-zinc-100 active:bg-zinc-800 active:text-zinc-300 focus-visible:outline-zinc-900" %>
+  </div>
+<% end %>

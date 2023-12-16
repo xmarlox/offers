@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+lazaro_nixon:
+  slug: userlazaronixon
+  username: lazaronixon
+  password_digest: <%= BCrypt::Password.create("Secret1*3*5*") %>
+  gender: male
+  birthdate: <%= birthdate = Faker::Date.birthday(min_age: 0, max_age: 100).strftime(User::BIRTHDATE_TEXT_FORMAT) %>
+  age: <%= User.calculate_age(birthdate) %>

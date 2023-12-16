@@ -1,0 +1,30 @@
+<div>
+  <div class="aspect-[150/70] bg-zinc-700 dark:bg-white rounded-xl overflow-hidden flex items-center justify-center hover:bg-white dark:hover:bg-zinc-700 transition delay-150 animation fade-out">
+    <div class="absolute z-11 text-lg text-white dark:text-zinc-700">NO IMAGE</div>
+    <p
+      class="relative z-10 text-sm text-zinc-700 dark:text-white"
+    >
+      <%== offer.description.gsub("\n", "<br/>") %>
+    </p>
+  </div>
+  <div>
+    <div class="inline-flex justify-between w-full px-2">
+      <div>
+        <h2
+          class="text-base font-semibold text-black dark:text-white mt-4 relative"
+        >
+          <%= offer.name %>
+        </h2>
+      </div>
+      <div class="flex flex-col items-end space-y-2 mt-4">
+        <% offer.groups.each do |group| %>
+          <span
+            class="group inline-flex items-center justify-center rounded-lg py-1 px-2 text-xs focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-900 text-white hover:bg-zinc-700 hover:text-zinc-100 active:bg-zinc-800 active:text-zinc-300 focus-visible:outline-zinc-900 dark:bg-white dark:text-black"
+            href="#">
+            <%= group.target_column.humanize %>: <%= group.name %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
