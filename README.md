@@ -1,8 +1,8 @@
 ## /offers
 
 ### Features
-1. Sign In / Sign Out
-2. Sign Up
+1. Offers Listing (per Age or Gender)
+2. Sign In / Sign Out / Sign Up
 3. Change Password
 4. Devices & Sessions List
 5. Activity Log
@@ -35,3 +35,6 @@ http://localhost:3000
 * Ruby 3.2.2
 * Rails 7.1.2
 * PostgreSQL 14.9
+
+## License
+[MIT License](https://github.com/xmarlox/offers/blob/main/LICENSE)
