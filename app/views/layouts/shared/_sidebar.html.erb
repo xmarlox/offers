@@ -3,14 +3,16 @@
   <div
     class="sticky top-0 rounded-xl w-full px-8 sm:px-16 py-8 lg:py-12 lg:px-10">
     <% if user.present? %>
-      <h1
-        class="text-black dark:text-white text-xl md:text-2xl xl:text-3xl 2xl:text-5xl font-bold tracking-tighter">
-        <%= link_to "/offers", root_path, class: "text-black dark:text-white" %>
-      </h1>
-      <div class="lg:mt-8 max-w-xl">
-        <p class="dark:text-zinc-400 text-zinc-500 text-base">
-          Signed as <span class="underline"><%= user.username %></span>
-        </p>
+      <div class="relative">
+        <h1
+          class="text-black dark:text-white text-xl md:text-2xl xl:text-3xl 2xl:text-5xl font-bold tracking-tighter">
+          <%= link_to "/offers", root_path, class: "text-black dark:text-white" %>
+        </h1>
+        <div class="absolute top-3 right-0 lg:relative lg:top-0 lg:mt-8 max-w-xl">
+          <p class="dark:text-zinc-400 text-zinc-500 text-sm lg:text-base">
+            Signed in as <span class="underline"><%= user.username %></span>
+          </p>
+        </div>
       </div>
       <div class="mt-4 pt-6 border-t border-zinc-800">
         <nav>
